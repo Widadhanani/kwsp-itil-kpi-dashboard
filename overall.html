@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>KWSP | Overall ITIL KPI 2026</title>
+
+    <!-- MAIN CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- BRAND -->
+        <div class="brand">
+
+            <img
+                src="images/kwsp-logo.png"
+                alt="KWSP EPF Logo"
+                class="kwsp-logo"
+            >
+
+            <div class="brand-title">
+
+                <h2>
+                    ITIL KPI
+                </h2>
+
+                <p>
+                    Dashboard 2026
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+        <nav>
+
+            <a
+                href="dashboard.html"
+                class="nav-btn"
+            >
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="overall.html"
+                class="nav-btn active"
+            >
+
+                <i class="fa-solid fa-list-check"></i>
+
+                <span>
+                    Overall ITIL KPI
+                </span>
+
+            </a>
+
+
+            <a
+                href="result2026.html"
+                class="nav-btn"
+            >
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                <span>
+                    KPI Result 2026
+                </span>
+
+            </a>
+
+
+            <a
+                href="jan-jun.html"
+                class="nav-btn"
+            >
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>
+                    Result Jan - Jun
+                </span>
+
+            </a>
+
+
+            <a
+                href="inc2026.html"
+                class="nav-btn"
+            >
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                <span>
+                    INC2026
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR FOOTER -->
+        <div class="side-foot">
+
+            <b>
+                KWSP / EPF
+            </b>
+
+            <span>
+                ITIL KPI Monitoring
+            </span>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             TOP BAR
+        ================================================== -->
+
+        <header class="topbar">
+
+
+            <div class="topbar-title">
+
+                <h1>
+                    Overall ITIL KPI 2026
+                </h1>
+
+                <p>
+                    ITIL KPI Register
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+
+                <!-- YEAR -->
+                <div class="year">
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    <span>
+                        2026
+                    </span>
+
+                </div>
+
+
+                <!-- ADMIN -->
+                <div class="administrator">
+
+                    <div class="admin-icon">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            ITIL KPI Portal
+                        </strong>
+
+                        <span>
+                            KWSP / EPF
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <section class="content">
+
+
+            <!-- =================================================
+                 PROCESS LIST
+            ================================================== -->
+
+            <div id="processList">
+
+
+                <!-- PAGE HEADING -->
+                <div class="heading">
+
+                    <span class="eyebrow">
+                        KPI LIST
+                    </span>
+
+                    <h2>
+                        Overall ITIL KPI 2026
+                    </h2>
+
+                    <p>
+                        Select an ITIL Process to view KPI details.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     PROCESS TOOLS
+                ============================================== -->
+
+                <div class="section-tools">
+
+
+                    <div>
+
+                        <h3>
+                            ITIL Process
+                        </h3>
+
+                        <p>
+                            Select a process to view its KPI.
+                        </p>
+
+                    </div>
+
+
+                    <!-- SEARCH -->
+                    <label class="search">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="processSearch"
+                            placeholder="Search ITIL Process..."
+                            autocomplete="off"
+                        >
+
+                    </label>
+
+
+                </div>
+
+
+
+                <!-- =============================================
+                     PROCESS CARDS
+
+                     Cards akan dijana oleh script.js
+                ============================================== -->
+
+                <div
+                    id="processGrid"
+                    class="process-grid"
+                >
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 KPI DETAIL
+
+                 Bahagian ini HIDDEN pada awalnya.
+                 Bila user tekan View KPI, script.js akan:
+                 1. Hide processList
+                 2. Show processDetail
+                 3. Masukkan nama process
+                 4. Masukkan KPI ke kpiBody
+            ================================================== -->
+
+            <div
+                id="processDetail"
+                class="process-detail"
+            >
+
+
+                <!-- BACK BUTTON -->
+                <button
+                    type="button"
+                    id="backBtn"
+                    class="back"
+                >
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to ITIL Process
+
+                </button>
+
+
+
+                <!-- KPI DETAIL HEADING -->
+                <div class="heading">
+
+                    <span class="eyebrow">
+                        KPI DETAILS
+                    </span>
+
+                    <h2 id="processTitle">
+                        Incident Management
+                    </h2>
+
+                    <p id="processCount">
+                        3 KPI Group(s)
+                    </p>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     PROCESS INFORMATION CARD
+                ============================================== -->
+
+                <div class="kpi-process-banner">
+
+
+                    <div class="kpi-process-left">
+
+
+                        <div class="kpi-process-icon">
+
+                            <i
+                                id="detailProcessIcon"
+                                class="fa-solid fa-triangle-exclamation"
+                            ></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span class="process-label">
+                                ITIL PROCESS
+                            </span>
+
+                            <h2 id="bannerProcessTitle">
+                                Incident Management
+                            </h2>
+
+                            <p>
+                                Overall ITIL KPI 2026
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="kpi-count">
+
+                        <strong id="detailKpiCount">
+                            3
+                        </strong>
+
+                        <span>
+                            KPI GROUPS
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =============================================
+                     KPI TABLE PANEL
+                ============================================== -->
+
+                <div class="panel kpi-detail-panel">
+
+
+                    <!-- PANEL HEADER -->
+                    <div class="panel-head">
+
+
+                        <div>
+
+                            <h3>
+                                KPI Register
+                            </h3>
+
+                            <p>
+                                Overall ITIL KPI 2026
+                            </p>
+
+                        </div>
+
+
+                        <!-- KPI SEARCH -->
+                        <label class="search">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="text"
+                                id="kpiSearch"
+                                placeholder="Search KPI..."
+                                autocomplete="off"
+                            >
+
+                        </label>
+
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         TABLE
+                    ========================================== -->
+
+                    <div class="kpi-table-wrap">
+
+
+                        <table class="kpi-detail-table">
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th class="col-number">
+                                        No.
+                                    </th>
+
+                                    <th class="col-kpi">
+                                        ITIL Process &amp; KPI 2026
+                                    </th>
+
+                                    <th class="col-frequency">
+                                        Report Frequency
+                                    </th>
+
+                                    <th class="col-target">
+                                        Target
+                                    </th>
+
+                                    <th class="col-stretch">
+                                        Stretch Target
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <!--
+                                DATA AKAN MASUK SINI
+                                MELALUI script.js
+                            -->
+
+                            <tbody id="kpiBody">
+                            </tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer>
+
+            © 2026 KWSP / EPF — ITIL KPI Dashboard
+
+        </footer>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+
+     data.js WAJIB sebelum script.js
+========================================================= -->
+
+<script src="js/data.js"></script>
+
+<script src="js/script.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,917 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        KWSP | ITIL KPI Result Jan - Jun 2026
+    </title>
+
+    <!-- MAIN CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <style>
+        /*
+           Additional styling for the
+           three-level Jan-Jun navigation.
+           Existing styling remains in style.css.
+        */
+
+        #janJunProcessList,
+        #janJunSubgroupList,
+        #janJunProcessDetail {
+            width: 100%;
+        }
+
+        #janJunSubgroupList,
+        #janJunProcessDetail {
+            display: none;
+        }
+
+        .jan-jun-subgroup-heading {
+            margin: 24px 0;
+        }
+
+        .jan-jun-subgroup-heading h2 {
+            margin: 10px 0;
+            color: #173b82;
+        }
+
+        .jan-jun-subgroup-heading p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .jan-jun-subgroup-grid {
+            margin-top: 24px;
+        }
+
+        .jan-jun-table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        .jan-jun-table {
+            width: max-content;
+            min-width: 100%;
+            border-collapse: collapse;
+            table-layout: auto;
+        }
+
+        .jan-jun-table th,
+        .jan-jun-table td {
+            box-sizing: border-box;
+            padding: 14px 16px;
+            vertical-align: middle;
+            line-height: 1.5;
+
+            white-space: normal;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        /* No. */
+        .jan-jun-table th:first-child,
+        .jan-jun-table td:first-child {
+            min-width: 75px;
+            text-align: center;
+        }
+
+        /* KPI Name */
+        .jan-jun-table th:nth-child(2),
+        .jan-jun-table td:nth-child(2) {
+            min-width: 380px;
+            width: 420px;
+            max-width: 520px;
+            text-align: left;
+        }
+
+        /* Report Frequency */
+        .jan-jun-table th:nth-child(3),
+        .jan-jun-table td:nth-child(3) {
+            min-width: 150px;
+            text-align: center;
+        }
+
+        /* Target & Stretch Target */
+        .jan-jun-table th:nth-child(4),
+        .jan-jun-table td:nth-child(4),
+        .jan-jun-table th:nth-child(5),
+        .jan-jun-table td:nth-child(5) {
+            min-width: 175px;
+            text-align: center;
+        }
+
+        /* JAN - JUN */
+        .jan-jun-table th:nth-child(n+6),
+        .jan-jun-table td:nth-child(n+6) {
+            min-width: 105px;
+            text-align: center;
+        }
+
+        /* Merged cells */
+        .jan-jun-table td[rowspan] {
+            vertical-align: middle;
+        }
+
+        /* Group heading */
+        .jan-jun-table .group-row td,
+        .jan-jun-table .result-subheading-row td {
+            background: #e8f0ff;
+            color: #173b82;
+            font-weight: 700;
+        }
+
+        /* Continuation rows */
+        .jan-jun-table .continuation-row td {
+            border-top: 1px solid #e5eaf1;
+        }
+
+        @media (max-width: 768px) {
+            .jan-jun-table th:nth-child(2),
+            .jan-jun-table td:nth-child(2) {
+                min-width: 300px;
+                width: 320px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <!-- BRAND -->
+        <div class="brand">
+
+            <img
+                src="images/kwsp-logo.png"
+                alt="KWSP EPF Logo"
+                class="kwsp-logo"
+            >
+
+            <div class="brand-title">
+
+                <h2>ITIL KPI</h2>
+
+                <p>Dashboard 2026</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+        <nav>
+
+            <a
+                href="dashboard.html"
+                class="nav-btn"
+            >
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+
+            <a
+                href="overall.html"
+                class="nav-btn"
+            >
+                <i class="fa-solid fa-list-check"></i>
+                Overall ITIL KPI
+            </a>
+
+
+            <a
+                href="result2026.html"
+                class="nav-btn"
+            >
+                <i class="fa-solid fa-chart-column"></i>
+                KPI Result 2026
+            </a>
+
+
+            <a
+                href="jan-jun.html"
+                class="nav-btn active"
+            >
+                <i class="fa-solid fa-chart-line"></i>
+                Result Jan - Jun
+            </a>
+
+
+            <a
+                href="inc2026.html"
+                class="nav-btn"
+            >
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                INC2026
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR FOOTER -->
+        <div class="side-foot">
+
+            <b>KWSP / EPF</b>
+
+            <span>
+                ITIL KPI Monitoring
+            </span>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+                    ITIL KPI Result Jan - Jun
+                </h1>
+
+                <p>
+                    Performance Monitoring 2026
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <!-- YEAR -->
+                <div class="year">
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    2026
+
+                </div>
+
+
+                <!-- ADMINISTRATOR -->
+                <div class="administrator">
+
+                    <div class="admin-icon">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            ITIL KPI Portal
+                        </strong>
+
+                        <span>
+                            KWSP / EPF
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <section class="content">
+
+
+            <!-- =============================================
+                 LEVEL 1
+                 ITIL PROCESS LIST
+            ============================================== -->
+
+            <div id="janJunProcessList">
+
+
+                <!-- PAGE HEADING -->
+                <div class="heading">
+
+                    <span class="eyebrow">
+                        HALF YEAR RESULT
+                    </span>
+
+                    <h2>
+                        ITIL KPI Result Jan - Jun 2026
+                    </h2>
+
+                    <p>
+                        Select an ITIL process to view
+                        January to June 2026
+                        KPI performance.
+                    </p>
+
+                </div>
+
+
+                <!-- PROCESS TOOLBAR -->
+                <div
+                    class="section-tools jan-jun-process-tools"
+                >
+
+                    <div>
+
+                        <h3>
+                            ITIL Process
+                        </h3>
+
+                        <p>
+                            Select a process to view
+                            its KPI results.
+                        </p>
+
+                    </div>
+
+
+                    <!-- PROCESS SEARCH -->
+                    <label class="search">
+
+                        <i
+                            class="fa-solid fa-magnifying-glass"
+                        ></i>
+
+                        <input
+                            type="text"
+                            id="janJunProcessSearch"
+                            placeholder="Search ITIL Process..."
+                            autocomplete="off"
+                        >
+
+                    </label>
+
+                </div>
+
+
+                <!-- PROCESS CARDS -->
+                <div
+                    id="janJunProcessGrid"
+                    class="process-grid jan-jun-process-grid"
+                >
+
+                    <!-- JavaScript inserts process cards here -->
+
+                    <div
+                        id="janJunLoading"
+                        class="jan-jun-loading"
+                    >
+
+                        <i
+                            class="fa-solid fa-spinner fa-spin"
+                        ></i>
+
+                        <span>
+                            Loading ITIL processes...
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 LEVEL 2
+                 SUBGROUP LIST
+                 Only displayed when the selected process
+                 has actual subgroup headings.
+            ============================================== -->
+
+            <div id="janJunSubgroupList">
+
+
+                <!-- BACK TO PROCESS -->
+                <button
+                    type="button"
+                    id="janJunSubgroupBackBtn"
+                    class="back"
+                >
+
+                    <i
+                        class="fa-solid fa-arrow-left"
+                    ></i>
+
+                    Back to ITIL Process
+
+                </button>
+
+
+                <!-- SUBGROUP HEADING -->
+                <div class="jan-jun-subgroup-heading">
+
+                    <span class="eyebrow">
+                        KPI SUBGROUP
+                    </span>
+
+                    <h2 id="janJunSubgroupTitle">
+                        Availability Management
+                    </h2>
+
+                    <p id="janJunSubgroupDescription">
+                        Select a subgroup to view
+                        its January to June 2026
+                        KPI performance.
+                    </p>
+
+                </div>
+
+
+                <!-- SUBGROUP TOOLBAR -->
+                <div
+                    class="section-tools jan-jun-process-tools"
+                >
+
+                    <div>
+
+                        <h3>
+                            KPI Subgroup
+                        </h3>
+
+                        <p>
+                            Select a subgroup
+                            from the Excel KPI structure.
+                        </p>
+
+                    </div>
+
+
+                    <!-- SUBGROUP SEARCH -->
+                    <label class="search">
+
+                        <i
+                            class="fa-solid fa-magnifying-glass"
+                        ></i>
+
+                        <input
+                            type="text"
+                            id="janJunSubgroupSearch"
+                            placeholder="Search KPI Subgroup..."
+                            autocomplete="off"
+                        >
+
+                    </label>
+
+                </div>
+
+
+                <!-- SUBGROUP CARDS -->
+                <div
+                    id="janJunSubgroupGrid"
+                    class="process-grid jan-jun-subgroup-grid"
+                >
+
+                    <!--
+                        JavaScript inserts subgroup cards.
+
+                        For Availability Management:
+
+                        1 Service Availability
+
+                        2 Service Performance
+
+                        3 Network Availability Management
+
+                        4 Data Availability
+                    -->
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 LEVEL 3
+                 SELECTED KPI RESULT TABLE
+            ============================================== -->
+
+            <div
+                id="janJunProcessDetail"
+                class="process-detail jan-jun-process-detail"
+            >
+
+
+                <!-- BACK BUTTON -->
+                <button
+                    type="button"
+                    id="janJunBackBtn"
+                    class="back"
+                >
+
+                    <i
+                        class="fa-solid fa-arrow-left"
+                    ></i>
+
+                    Back
+
+                </button>
+
+
+
+                <!-- =========================================
+                     DETAIL HERO
+                ========================================== -->
+
+                <div class="half-year-hero">
+
+
+                    <!-- ICON -->
+                    <div
+                        class="half-year-icon"
+                        id="janJunDetailIcon"
+                    >
+
+                        <i
+                            class="fa-solid fa-chart-line"
+                        ></i>
+
+                    </div>
+
+
+                    <!-- SELECTED PROCESS / SUBGROUP -->
+                    <div class="half-year-copy">
+
+                        <span
+                            class="eyebrow"
+                            id="janJunDetailCategory"
+                        >
+
+                            FIRST HALF 2026
+
+                        </span>
+
+
+                        <h2 id="janJunProcessTitle">
+
+                            KPI Result
+
+                        </h2>
+
+
+                        <p id="janJunProcessCount">
+
+                            KPI performance from
+                            January to June 2026.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- PERIOD -->
+                    <div class="half-year-period">
+
+                        <i
+                            class="fa-regular fa-calendar"
+                        ></i>
+
+                        <div>
+
+                            <span>
+                                PERIOD
+                            </span>
+
+                            <strong>
+                                JAN - JUN
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     MONTH CARDS
+                ========================================== -->
+
+                <div class="half-year-months">
+
+                    <div>
+
+                        <span>JAN</span>
+
+                        <small>January</small>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>FEB</span>
+
+                        <small>February</small>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>MAR</span>
+
+                        <small>March</small>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>APR</span>
+
+                        <small>April</small>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>MAY</span>
+
+                        <small>May</small>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>JUN</span>
+
+                        <small>June</small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     RESULT PANEL
+                ========================================== -->
+
+                <div
+                    class="panel jan-jun-result-panel"
+                >
+
+
+                    <!-- PANEL HEADER -->
+                    <div class="panel-head">
+
+                        <div>
+
+                            <span
+                                class="half-year-table-label"
+                            >
+
+                                JANUARY - JUNE
+
+                            </span>
+
+
+                            <h3 id="janJunTableTitle">
+
+                                First-Half KPI Performance
+
+                            </h3>
+
+
+                            <p>
+
+                                Target, stretch target
+                                and monthly KPI results
+                                for the selected process
+                                or subgroup.
+
+                            </p>
+
+                        </div>
+
+
+                        <!-- KPI RESULT SEARCH -->
+                        <label class="search">
+
+                            <i
+                                class="fa-solid fa-magnifying-glass"
+                            ></i>
+
+                            <input
+                                id="janJunSearch"
+                                type="text"
+                                placeholder="Search KPI Result..."
+                                autocomplete="off"
+                            >
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         RESULT INFORMATION
+                    ====================================== -->
+
+                    <div class="half-year-table-info">
+
+                        <i
+                            class="fa-solid fa-circle-info"
+                        ></i>
+
+                        <span>
+
+                            Monthly results are displayed
+                            from January to June 2026.
+
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         RESULT TABLE
+                    ====================================== -->
+
+                    <div
+                        class="table-wrap jan-jun-table-wrap"
+                    >
+
+                        <table
+                            class="wide jan-jun-table"
+                        >
+
+
+                            <!-- TABLE HEADER -->
+                            <thead id="janJunHead">
+
+                                <tr>
+
+                                    <th>
+                                        No.
+                                    </th>
+
+                                    <th>
+                                        ITIL Process & KPI 2026
+                                    </th>
+
+                                    <th>
+                                        Report Frequency
+                                    </th>
+
+                                    <th>
+                                        Target
+                                    </th>
+
+                                    <th>
+                                        Stretch Target
+                                    </th>
+
+                                    <th>
+                                        JAN
+                                    </th>
+
+                                    <th>
+                                        FEB
+                                    </th>
+
+                                    <th>
+                                        MAR
+                                    </th>
+
+                                    <th>
+                                        APR
+                                    </th>
+
+                                    <th>
+                                        MAY
+                                    </th>
+
+                                    <th>
+                                        JUN
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <!-- TABLE BODY -->
+                            <tbody id="janJunBody">
+
+                                <!--
+                                    JavaScript inserts
+                                    selected KPI rows here.
+
+                                    The renderer should:
+
+                                    1. Hide the Process column.
+
+                                    2. Preserve actual Excel
+                                       KPI values.
+
+                                    3. Highlight subgroup
+                                       heading rows.
+
+                                    4. Merge continuation
+                                       rows using rowspan.
+
+                                    5. Display JAN - JUN.
+                                -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer>
+
+            © 2026 KWSP / EPF —
+            ITIL KPI Dashboard
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+
+     data.js contains RESULT_JANJUN.
+
+     script.js handles:
+
+     - Process cards
+     - Subgroup cards
+     - Direct process results
+     - Jan-Jun KPI table
+     - Search
+     - Back navigation
+========================================================= -->
+
+<script src="js/data.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
