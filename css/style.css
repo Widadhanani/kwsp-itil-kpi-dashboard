@@ -5069,3 +5069,227 @@ table.wide td {
     }
 
 }
+
+/* ==========================================
+   FIX KPI REGISTER TABLE - UNIFORM SIZE
+========================================== */
+
+/* TABLE CONTAINER */
+#processDetail {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+/* TABLE WIDTH */
+#processDetail table {
+    width: 100% !important;
+    min-width: 1100px !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+    font-family: Arial, sans-serif !important;
+}
+
+/* COLUMN WIDTH - ALL PROCESSES */
+#processDetail table th:nth-child(1) {
+    width: 7% !important;
+}
+
+#processDetail table th:nth-child(2) {
+    width: 38% !important;
+}
+
+#processDetail table th:nth-child(3) {
+    width: 15% !important;
+}
+
+#processDetail table th:nth-child(4) {
+    width: 20% !important;
+}
+
+#processDetail table th:nth-child(5) {
+    width: 20% !important;
+}
+
+/* TABLE HEADERS */
+#processDetail table th {
+    font-family: Arial, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    padding: 15px 12px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+/* TABLE CONTENT */
+#processDetail table td {
+    font-family: Arial, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    padding: 14px 12px !important;
+    vertical-align: middle !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+}
+
+/* KPI NAME */
+#processDetail .kpi-name {
+    text-align: left !important;
+    font-weight: 500 !important;
+}
+
+/* TARGET AND STRETCH TARGET */
+#processDetail .target-value,
+#processDetail .stretch-value {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    padding: 10px 8px !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+}
+
+/* FREQUENCY */
+#processDetail .frequency-badge {
+    font-family: Arial, sans-serif !important;
+    font-size: 12px !important;
+    white-space: normal !important;
+}
+
+/* HORIZONTAL SCROLL WHEN NECESSARY */
+#processDetail .table-responsive,
+#processDetail .table-container,
+#processDetail .table-wrapper {
+    width: 100% !important;
+    overflow-x: auto !important;
+}
+
+/* ==========================================
+   REMOVE NUMBER BADGE BACKGROUND
+========================================== */
+
+#processDetail .number-badge {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+
+    padding: 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
+    height: auto !important;
+
+    display: inline !important;
+
+    color: #000000 !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+}
+
+/* CENTER NUMBER IN COLUMN */
+#processDetail .number-cell {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+/* REMOVE WHITE BOX BEHIND KWSP LOGO */
+
+.sidebar .kwsp-logo {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* REMOVE WHITE BOX AROUND KWSP LOGO */
+
+.sidebar .brand,
+.sidebar .logo-box,
+.sidebar .kwsp-logo {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.sidebar .logo-box,
+.sidebar .kwsp-logo {
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
+
+/* ======================================
+   BESARKAN & LEBARKAN LOGO KWSP
+====================================== */
+
+/* Lebarkan sidebar */
+.sidebar {
+    width: 310px !important;
+}
+
+/* Laraskan main content */
+main {
+    margin-left: 310px !important;
+    width: calc(100% - 310px) !important;
+}
+
+/* Besarkan kawasan logo */
+.sidebar .brand {
+    padding: 15px 10px 20px !important;
+    align-items: center !important;
+}
+
+/* Lebarkan dan besarkan logo */
+.sidebar .kwsp-logo {
+    width: 290px !important;
+    height: 170px !important;
+    max-width: 100% !important;
+
+    object-fit: contain !important;
+
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    padding: 0 !important;
+    margin: 0 auto 15px !important;
+}
+
+/* Responsive untuk phone */
+@media (max-width: 760px) {
+    .sidebar {
+        width: 100% !important;
+    }
+
+    main {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+}
+
+/* ALIGN ITIL KPI TITLE TO THE LEFT */
+
+.sidebar .brand-title {
+    width: 100% !important;
+    text-align: left !important;
+    padding-left: 10px !important;
+    margin-left: 0 !important;
+}
+
+.sidebar .brand-title h2,
+.sidebar .brand-title p {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
